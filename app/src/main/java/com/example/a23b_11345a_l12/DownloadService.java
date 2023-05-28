@@ -41,6 +41,7 @@ public class DownloadService extends Service {
     }
 
     private void downloadAndPlay() {
+        isPlaying = true;
         for (int i = 0; i <= 100; i += 10) {
             Log.d("Downloading:", "downloadAndPlay: i = " + i);
             try {
@@ -58,7 +59,6 @@ public class DownloadService extends Service {
 
 
     private void startMusic() {
-        isPlaying = true;
         mediaPlayer = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
